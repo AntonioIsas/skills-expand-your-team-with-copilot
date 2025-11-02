@@ -650,7 +650,7 @@ footer {
 #user-controls {
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 70px;
 }
 
 #user-status {
@@ -720,7 +720,32 @@ footer {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Adjust user controls positioning when theme toggle is present */
-#user-controls {
-  right: 60px;
+/* Responsive adjustments for mobile */
+@media (max-width: 767px) {
+  .sidebar-filters {
+    margin-bottom: 15px;
+  }
+
+  .main-content-layout {
+    flex-direction: column;
+  }
+
+  #activities-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .sidebar-filters {
+    width: 100%;
+  }
+
+  /* Adjust header controls for mobile */
+  #theme-toggle {
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+
+  #user-controls {
+    right: 55px;
+  }
 }
