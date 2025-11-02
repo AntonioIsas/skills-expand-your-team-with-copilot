@@ -32,6 +32,40 @@
   --info-light: #d1ecf1;
 }
 
+/* Dark mode color palette */
+body.dark-mode {
+  /* Primary colors - slightly lighter for dark mode */
+  --primary: #3949ab;
+  --primary-light: #6f74dd;
+  --primary-dark: #00227b;
+  --primary-text: #ffffff;
+
+  /* Secondary colors */
+  --secondary: #ff8f00;
+  --secondary-light: #ffc046;
+  --secondary-dark: #c56000;
+  --secondary-text: #000000;
+
+  /* Neutral colors - dark theme */
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border: #333333;
+  --border-light: #2a2a2a;
+  --border-focus: #444444;
+
+  /* Feedback colors - adjusted for dark mode */
+  --success: #4caf50;
+  --success-light: #1b5e20;
+  --warning: #ff9800;
+  --warning-light: #663c00;
+  --error: #f44336;
+  --error-light: #5d1a1a;
+  --info: #29b6f6;
+  --info-light: #0d3c55;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,6 +82,7 @@ body {
   padding: 12px;
   background-color: var(--background);
   font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -616,7 +651,7 @@ footer {
 #user-controls {
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 70px;
 }
 
 #user-status {
@@ -664,6 +699,56 @@ footer {
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+/* Dark mode toggle button */
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 767px) {
+  .sidebar-filters {
+    margin-bottom: 15px;
+  }
+
+  .main-content-layout {
+    flex-direction: column;
+  }
+
+  #activities-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .sidebar-filters {
+    width: 100%;
+  }
+
+  /* Adjust header controls for mobile */
+  #theme-toggle {
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+
+  #user-controls {
+    right: 55px;
+  }
 
 /* Social Sharing Buttons */
 .social-sharing {
